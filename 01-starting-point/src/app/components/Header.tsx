@@ -4,15 +4,15 @@ import Link from "next/link";
 
 import CartPopup from "./CartPopup";
 import { type Cart } from "@/api/types";
+import { useCart } from "@/app/components/CartContext";
 
 export default function Header({
-  cart,
   clearCartAction,
 }: {
-  cart: Cart;
   clearCartAction: () => Promise<Cart>;
 }) {
   const [showCart, setShowCart] = useState(false);
+  const [cart] = useCart();
 
   return (
     <header className="mx-2 flex items-center justify-between p-4 bg-blue-800 mb-10 shadow-lg shadow-white rounded-b-2xl">
@@ -31,7 +31,7 @@ export default function Header({
           {cart.products.length}
         </span>
         {showCart && (
-          <CartPopup cart={cart} clearCartAction={clearCartAction} />
+          <CartPopup clearCartAction={clearCartAction} />
         )}
       </div>
     </header>

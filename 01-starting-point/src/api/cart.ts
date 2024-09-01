@@ -24,6 +24,7 @@ export const getCart = async (): Promise<Cart> => {
 
 export const addToCart = async (productId: number): Promise<Cart> => {
   const product = await getProductById(productId);
+
   if (product) {
     cart.products.push({
       name: product.name,
