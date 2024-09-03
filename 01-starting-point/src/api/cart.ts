@@ -15,6 +15,12 @@ const cart: Cart = {
       image: "/dragon-t-shirt.jpg",
       price: 25,
     },
+    {
+      id: 3,
+      name: "Dragon T-Shirt",
+      image: "/dragon-t-shirt.jpg",
+      price: 15,
+    },
   ],
 };
 
