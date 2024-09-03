@@ -34,7 +34,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <CartProvider>
+        <CartProvider cart={cart}>
           <Header clearCartAction={clearCartAction} />
           <main className="mx-auto max-w-3xl">{children}</main>
         </CartProvider>

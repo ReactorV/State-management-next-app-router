@@ -30,6 +30,7 @@ export default async function ProductDetail({
     "use server";
     return await addToCart(+id);
   };
+
   const addReviewAction = async (text: string, rating: number) => {
     "use server";
     const reviews = await addReview(+id, { text, rating });

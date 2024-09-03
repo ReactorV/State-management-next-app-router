@@ -5,6 +5,7 @@ import ProductCard from "./components/ProductCard";
 
 export default async function Home() {
   const products = await getProducts();
+
   return (
     <div className="flex flex-wrap gap-2">
       <ul role="list" className="flex flex-row flex-wrap m-2">

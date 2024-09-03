@@ -3,14 +3,14 @@ import { ReactNode, createContext, useState, useContext } from "react";
 import { type Cart } from "@/api/types";
 import {clearCart, getCart} from "@/api/cart";
 
-const useCartState = () => useState<Cart>({ products: [] });
+const useCartState = (cart: Cart) => useState<Cart>(cart);
 
 export const CartContext = createContext<ReturnType<
     typeof useCartState
 > | null>(null);
 
-export const CartProvider = ({ children }: { children: ReactNode }) => {
-    const [cart, setCart] = useCartState();
+export const CartProvider = ({ cart: initialCart, children }: { cart: Cart, children: ReactNode }) => {
+    const [cart, setCart] = useCartState(initialCart);
 
     return (
         <CartContext.Provider value={[cart, setCart]}>
