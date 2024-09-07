@@ -121,6 +121,7 @@ export const addReview = async (
   }
 ): Promise<Review[] | undefined> => {
   const product = await getProductById(id);
+
   if (product) {
     product.reviews.push(review);
   }

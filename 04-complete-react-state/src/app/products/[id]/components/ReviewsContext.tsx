@@ -11,6 +11,7 @@ export const ReviewsContext = createContext<ReturnType<
 
 export const useReviews = () => {
   const reviews = React.useContext(ReviewsContext);
+
   if (!reviews) {
     throw new Error("useReview must be used within a ReviewProvider");
   }
